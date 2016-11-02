@@ -99,8 +99,8 @@ class Cropit {
     this.zoomer = new Zoomer();
 
     if (this.options.allowDragNDrop) {
-      if(typeof _jquery2['default'].event.props === 'undefined'){
-        _jquery2['default'].event.props = [];
+      if(typeof $.event.props === 'undefined'){
+        $.event.props = [];
       }
       $.event.props.push('dataTransfer');
     }

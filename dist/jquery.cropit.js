@@ -170,7 +170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _jquery = __webpack_require__(1);
 
-	var _jquery3 = _interopRequireDefault(_jquery);
+	var _jquery2 = _interopRequireDefault(_jquery);
 
 	var _Zoomer = __webpack_require__(3);
 
@@ -186,10 +186,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Cropit(jQuery, element, options) {
 	    _classCallCheck(this, Cropit);
 
-	    this.$el = (0, _jquery3['default'])(element);
+	    this.$el = (0, _jquery2['default'])(element);
 
 	    var defaults = (0, _options.loadDefaults)(this.$el);
-	    this.options = _jquery3['default'].extend({}, defaults, options);
+	    this.options = _jquery2['default'].extend({}, defaults, options);
 
 	    this.init();
 	  }
@@ -216,12 +216,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        height: this.options.height || this.$preview.innerHeight()
 	      };
 
-	      this.$image = (0, _jquery3['default'])('<img />').addClass(_constants.CLASS_NAMES.PREVIEW_IMAGE).attr('alt', '').css({
+	      this.$image = (0, _jquery2['default'])('<img />').addClass(_constants.CLASS_NAMES.PREVIEW_IMAGE).attr('alt', '').css({
 	        transformOrigin: 'top left',
 	        webkitTransformOrigin: 'top left',
 	        willChange: 'transform'
 	      });
-	      this.$imageContainer = (0, _jquery3['default'])('<div />').addClass(_constants.CLASS_NAMES.PREVIEW_IMAGE_CONTAINER).css({
+	      this.$imageContainer = (0, _jquery2['default'])('<div />').addClass(_constants.CLASS_NAMES.PREVIEW_IMAGE_CONTAINER).css({
 	        position: 'absolute',
 	        overflow: 'hidden',
 	        left: 0,
@@ -232,7 +232,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.$preview.append(this.$imageContainer);
 
 	      if (this.options.imageBackground) {
-	        if (_jquery3['default'].isArray(this.options.imageBackgroundBorderWidth)) {
+	        if (_jquery2['default'].isArray(this.options.imageBackgroundBorderWidth)) {
 	          this.bgBorderWidthArray = this.options.imageBackgroundBorderWidth;
 	        } else {
 	          this.bgBorderWidthArray = [0, 1, 2, 3].map(function () {
@@ -240,7 +240,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          });
 	        }
 
-	        this.$bg = (0, _jquery3['default'])('<img />').addClass(_constants.CLASS_NAMES.PREVIEW_BACKGROUND).attr('alt', '').css({
+	        this.$bg = (0, _jquery2['default'])('<img />').addClass(_constants.CLASS_NAMES.PREVIEW_BACKGROUND).attr('alt', '').css({
 	          position: 'relative',
 	          left: this.bgBorderWidthArray[3],
 	          top: this.bgBorderWidthArray[0],
@@ -248,7 +248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          webkitTransformOrigin: 'top left',
 	          willChange: 'transform'
 	        });
-	        this.$bgContainer = (0, _jquery3['default'])('<div />').addClass(_constants.CLASS_NAMES.PREVIEW_BACKGROUND_CONTAINER).css({
+	        this.$bgContainer = (0, _jquery2['default'])('<div />').addClass(_constants.CLASS_NAMES.PREVIEW_BACKGROUND_CONTAINER).css({
 	          position: 'absolute',
 	          zIndex: 0,
 	          top: -this.bgBorderWidthArray[0],
@@ -274,7 +274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (typeof _jquery2['default'].event.props === 'undefined') {
 	          _jquery2['default'].event.props = [];
 	        }
-	        _jquery3['default'].event.props.push('dataTransfer');
+	        _jquery2['default'].event.props.push('dataTransfer');
 	      }
 
 	      this.bindListeners();
@@ -480,7 +480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.moveContinue = true;
 	        this.$imageContainer.on(_constants.EVENTS.PREVIEW_MOVE, this.onMove.bind(this));
 	      } else {
-	        (0, _jquery3['default'])(document.body).focus();
+	        (0, _jquery2['default'])(document.body).focus();
 	      }
 
 	      e.stopPropagation();
@@ -675,7 +675,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        originalSize: false,
 	        fillBg: '#fff'
 	      };
-	      exportOptions = _jquery3['default'].extend({}, exportDefaults, exportOptions);
+	      exportOptions = _jquery2['default'].extend({}, exportDefaults, exportOptions);
 
 	      var exportZoom = exportOptions.originalSize ? 1 / this.zoom : this.options.exportZoom;
 
@@ -684,7 +684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        height: this.zoom * exportZoom * this.image.height
 	      };
 
-	      var canvas = (0, _jquery3['default'])('<canvas />').attr({
+	      var canvas = (0, _jquery2['default'])('<canvas />').attr({
 	        width: this.previewSize.width * exportZoom,
 	        height: this.previewSize.height * exportZoom
 	      }).get(0);
